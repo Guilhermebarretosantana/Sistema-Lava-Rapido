@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lava Rápido - Sistema de Gestão</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 220px;
+            padding: 12px;
+            margin: 8px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 15px;
+            margin: 5px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .resumo-box {
+            background: #334155;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 18px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #334155;
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        canvas {
+            background: white;
+            border-radius: 12px;
+            margin-top: 20px;
+            padding: 10px;
+            max-width: 100%;
+        }
+
+        #relatorio-mensal {
+            background: #334155;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        #resumo-dia {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🚗 Lava Rápido - Gestão Financeira</h1>
+
+    <!-- Lavagem -->
+    <div>
+        <input type="number" id="valor" placeholder="Valor da lavagem">
+        <button onclick="adicionarLavagem()">Adicionar Lavagem</button>
+    </div>
+
+    <!-- Gasto -->
+    <div>
+        <input type="number" id="gasto" placeholder="Valor do gasto">
+        <button onclick="adicionarGasto()">Adicionar Gasto</button>
+    </div>
+
+    <!-- Resumo -->
+    <div class="resumo-box">
+        Total Lavagens: R$ <span id="total">0</span>
+    </div>
+
+    <div class="resumo-box">
+        Lucro Atual: R$ <span id="lucro">0</span>
+    </div>
+
+    <!-- Gráfico -->
+    <canvas id="grafico"></canvas>
+
+    <!-- Resumo por Dia -->
+    <h2>📅 Resumo por Dia</h2>
+    <ul id="resumo-dia"></ul>
+
+    <!-- Relatório Mensal -->
+    <h2>🗓️ Relatório Mensal</h2>
+    <div id="relatorio-mensal"></div>
+
+    <!-- Histórico -->
+    <h2>📋 Histórico de Registros</h2>
+    <ul id="lista"></ul>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
